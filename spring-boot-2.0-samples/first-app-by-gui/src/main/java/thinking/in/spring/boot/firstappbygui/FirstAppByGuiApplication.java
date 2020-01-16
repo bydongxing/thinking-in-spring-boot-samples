@@ -2,18 +2,6 @@ package thinking.in.spring.boot.firstappbygui;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.context.WebServerInitializedEvent;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.event.EventListener;
-import org.springframework.web.reactive.function.server.RouterFunction;
-import org.springframework.web.reactive.function.server.ServerResponse;
-import reactor.core.publisher.Mono;
-import thinking.in.spring.boot.config.WebConfiguration;
-
-import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
-import static org.springframework.web.reactive.function.server.RouterFunctions.route;
-import static org.springframework.web.reactive.function.server.ServerResponse.ok;
 
 //@Configuration
 //@ComponentScan
@@ -21,9 +9,9 @@ import static org.springframework.web.reactive.function.server.ServerResponse.ok
 //@SpringBootApplication(scanBasePackages = "thinking.in.spring.boot.config")
 public class FirstAppByGuiApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(FirstAppByGuiApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(FirstAppByGuiApplication.class, args);
+    }
 
 //    /**
 //     * {@link ApplicationRunner#run(ApplicationArguments)} 方法在
@@ -39,4 +27,14 @@ public class FirstAppByGuiApplication {
 //                    + context.getWebServer().getClass().getName());
 //        };
 //    }
+
+	/**
+	 * 支持非 web 应用中运行
+	 */
+//	@EventListener(WebServerInitializedEvent.class)
+//	public void onWebServerReady(WebServerInitializedEvent event) {
+//		System.out.println("当前 WebServer 实现类为："+event.getWebServer().getClass().getName());
+//
+//	}
+
 }
